@@ -15,7 +15,7 @@ namespace MuseumBack.Models.Trainer
         {
             const string assetRelativePath = @"../../../assets";
             string assetsPath = GetAbsolutePath(assetRelativePath);
-            string outputMlNetModelFilePath = Path.Combine(assetsPath, "outputs", "imageClassifier.zip");
+            string outputMlNetModelFilePath = Path.Combine(assetsPath, "inputs","model", "imageClassifier.zip");
 
             var mlContext = new MLContext(seed: 1);
             #region getImageSet

@@ -14,7 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="assets\outputs\" />
+    <Folder Include="assets\inputs\toguess\" />
   </ItemGroup>
 
 </Project>
