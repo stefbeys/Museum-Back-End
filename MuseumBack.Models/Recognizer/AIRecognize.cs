@@ -1,4 +1,5 @@
 ﻿using Microsoft.ML;
+using MuseumBack.Model;
 using MuseumBack.Models.DataModels;
 using MuseumBack.Models.Trainer;
 using System;
@@ -9,7 +10,9 @@ namespace MuseumBack.Models.Recognizer
 {
     public static class AIRecognize
     {
-        public static string Recognize(string base64,string imagepath=null)
+        static MLContext mlContext = new MLContext(seed: 1);
+
+        public static PredictionDTO Recognize(string base64,string imagepath=null)
         {
             const string assetsRelativePath = @"../../../assets";
             var assetsPath = AITrainer.GetAbsolutePath(assetsRelativePath);
@@ -24,7 +27,6 @@ namespace MuseumBack.Models.Recognizer
             var imageClassifierModelZipFilePath = Path.Combine(assetsPath, "inputs", "model", "imageClassifier.zip");
             try
             {
-                var mlContext = new MLContext(seed: 1);
                 var loadedModel = mlContext.Model.Load(imageClassifierModelZipFilePath, out var modelInputSchema);
                 var predictionEngine = mlContext.Model.CreatePredictionEngine<InMemoryImageData, ImagePrediction>(loadedModel);
                 var imagesToPredict = FileUtils.LoadInMemoryImagesFromDirectory(Path.Combine(assetsPath, "inputs", "toguess"), false);
@@ -36,7 +38,7 @@ namespace MuseumBack.Models.Recognizer
                     if (prediction.Score.Max() * 100 > 85)
                     {
                         var maxindext = prediction.Score.ToList().IndexOf(prediction.Score.Max());
-                        return prediction.PredictedLabel;
+                        return new PredictionDTO { Label = prediction.PredictedLabel,Percentage=prediction.Score.Max()*100 };
                     }
 
                 }
