@@ -18,7 +18,7 @@ namespace MuseumBack.Controllers
         {
             if (simplepassword == "Flamingo007")
             {
-                const string assetsRelativePath = @"../../../assets";
+                const string assetsRelativePath = @"assets";
                 string path = AITrainer.GetAbsolutePath(assetsRelativePath);
                 AITrainer.Train(Path.Combine(path, "images"));
                 return new OkResult();
@@ -28,8 +28,10 @@ namespace MuseumBack.Controllers
         [HttpGet("Categories")]
         public ActionResult GetCategories()
         {
-            const string assetsRelativePath = @"../../../assets";
+            const string assetsRelativePath = @"assets";
             string path = AITrainer.GetAbsolutePath(assetsRelativePath);
+            Console.WriteLine(Directory.Exists(path));
+            Console.WriteLine(path);
             var names = Directory.GetDirectories(Path.Combine(path, "images")).Select(dir=> Path.GetFileName(dir));
             dynamic obj = new ExpandoObject();
             obj.categories = names;
@@ -42,7 +44,7 @@ namespace MuseumBack.Controllers
 
             if (images != null)
             {
-                const string assetsRelativePath = @"../../../assets";
+                const string assetsRelativePath = @"assets";
                 string path= AITrainer.GetAbsolutePath(assetsRelativePath);
                 foreach (var image in images)
                 {
