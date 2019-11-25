@@ -5,9 +5,9 @@ VisualStudioVersion = 16.0.29123.88
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MuseumBack", "MuseumBack.csproj", "{EF62AD1E-BA74-4A57-848A-137A11C3A9E7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MuseumBack.Models", "..\MuseumBack.Models\MuseumBack.Models.csproj", "{9A9F98DF-0602-455A-A2A3-0361A52F86B6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MuseumBack.Models", "..\MuseumBack.Models\MuseumBack.Models.csproj", "{9A9F98DF-0602-455A-A2A3-0361A52F86B6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AITesting", "..\AITesting\AITesting.csproj", "{43428C79-37C1-4F49-94CB-69C0F1E73D99}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AITesting", "..\AITesting\AITesting.csproj", "{43428C79-37C1-4F49-94CB-69C0F1E73D99}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
