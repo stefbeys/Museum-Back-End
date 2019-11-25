@@ -13,7 +13,7 @@ namespace MuseumBack.Models.Trainer
     {
         public static void Train(string ImagePath)
         {
-            const string assetRelativePath = @"../../../assets";
+            const string assetRelativePath = @"assets";
             string assetsPath = GetAbsolutePath(assetRelativePath);
             string outputMlNetModelFilePath = Path.Combine(assetsPath, "inputs","model", "imageClassifier.zip");
 

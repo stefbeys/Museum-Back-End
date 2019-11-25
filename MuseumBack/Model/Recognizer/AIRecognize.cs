@@ -14,7 +14,7 @@ namespace MuseumBack.Models.Recognizer
 
         public static PredictionDTO Recognize(string base64,string imagepath=null)
         {
-            const string assetsRelativePath = @"../../../assets";
+            const string assetsRelativePath = @"assets";
             var assetsPath = AITrainer.GetAbsolutePath(assetsRelativePath);
             string imageForPrediction;
             if (imagepath == null)
