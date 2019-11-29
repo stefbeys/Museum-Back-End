@@ -35,7 +35,8 @@ namespace MuseumBack.Models.Recognizer
                 if (imageToPredict != null)
                 {
                     var prediction = predictionEngine.Predict(imageToPredict);
-                    if (prediction.Score.Max() * 100 > 85)
+                    Console.WriteLine(prediction.PredictedLabel + "-----score---" + prediction.Score.Max());
+                    if (prediction.Score.Max() * 100 > 69)
                     {
                         var maxindext = prediction.Score.ToList().IndexOf(prediction.Score.Max());
                         return new PredictionDTO { Label = prediction.PredictedLabel,Percentage=prediction.Score.Max()*100 };

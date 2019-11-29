@@ -14,9 +14,9 @@ namespace MuseumBack.Controllers
     public class AIController : Controller
     {
         [HttpPost("Start")]
-        public ActionResult StartLearning(string simplepassword)
+        public ActionResult StartLearning(LearningDTO simplepassword)
         {
-            if (simplepassword == "Flamingo007")
+            if (simplepassword.Password == "Flamingo007")
             {
                 const string assetsRelativePath = @"assets";
                 string path = AITrainer.GetAbsolutePath(assetsRelativePath);

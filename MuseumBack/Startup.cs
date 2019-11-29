@@ -43,7 +43,6 @@ namespace MuseumBack
             }
             app.UseOpenApi();
             app.UseSwaggerUi3();
-            app.UseHttpsRedirection();
             app.UseMvc();
         }
     }

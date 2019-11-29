@@ -21,6 +21,7 @@ namespace MuseumBack
             WebHost.CreateDefaultBuilder(args)
                 .UseStartup<Startup>()
             .UseKestrel(options=> {
+               
                 options.ListenAnyIP(5000);
             });
     }
