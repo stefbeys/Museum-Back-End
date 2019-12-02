@@ -4,7 +4,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using MuseumBack.Model;
+using MuseumBack.Model.DataModels;
 using MuseumBack.Models.Recognizer;
+using Newtonsoft.Json;
+using System.IO;
+using MuseumBack.Models.Trainer;
 
 namespace MuseumBack.Controllers
 {
@@ -20,7 +24,10 @@ namespace MuseumBack.Controllers
                 var result= AIRecognize.Recognize(image.Base64);
                 if (result!=null)
                 {
-                    return new OkObjectResult(result);
+                    const string assetsRelativePath = @"assets";
+                    var assetsPath = AITrainer.GetAbsolutePath(assetsRelativePath);
+                    List<AnimalDTO> res = JsonConvert.DeserializeObject<List<AnimalDTO>>(System.IO.File.ReadAllText(Path.Combine(assetsPath, "animals.json")));
+                    return new OkObjectResult(res.Where(r => r.Name == result.Label).FirstOrDefault());
                 }
                 else
                 {

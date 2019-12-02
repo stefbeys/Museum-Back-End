@@ -39,10 +39,13 @@ namespace MuseumBack.Models.Recognizer
                     if (prediction.Score.Max() * 100 > 69)
                     {
                         var maxindext = prediction.Score.ToList().IndexOf(prediction.Score.Max());
+                        File.Delete(Path.Combine(assetsPath,"inputs","toguess", imageForPrediction));
                         return new PredictionDTO { Label = prediction.PredictedLabel,Percentage=prediction.Score.Max()*100 };
                     }
 
                 }
+                File.Delete(Path.Combine(assetsPath, "inputs", "toguess", imageForPrediction));
+
             }
             catch (Exception e)
             {
