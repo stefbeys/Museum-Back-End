@@ -23,7 +23,7 @@ Setup:
 Prerequisites:
 	
  - Visual Studio 2019 with asp.net dependencies
- -[.NET Core 2.2](https://dotnet.microsoft.com/download/dotnet-core/thank-you/sdk-2.2.207-windows-x64-installer) 
+ - [.NET Core 2.2](https://dotnet.microsoft.com/download/dotnet-core/thank-you/sdk-2.2.207-windows-x64-installer) 
  
 After this you should be able to open and launch the project from Visual studio.
 See screenshot for run settings.
