@@ -1,9 +1,9 @@
 
+
 # Museum Back End
 Main Branch: [![Build Status](https://travis-ci.com/stefbeys/Museum-Back-End.svg?branch=master)](https://travis-ci.com/stefbeys/Museum-Back-End) 
 
 # Run it
-
 ## 1. Docker
 
 Prerequisites: 
@@ -34,4 +34,32 @@ choose the museumBack and run it.
 You can find all the endpoints from the swagger endpoint.
 http://ipofhost:port/swagger
 
+# Run release
+Prerequisites:
+
+ - [.Net Runtime](https://dotnet.microsoft.com/download/thank-you/dotnet-runtime-2.2.7-windows-x64-installer)
+ - [.Net Core Runtime](https://dotnet.microsoft.com/download/thank-you/dotnet-runtime-2.2.7-windows-x64-asp.net-core-runtime-installer)
+ - Assets directory
+Notes!!!!!!
+after learning the AI restart the server! The images that are used aren't released and will eventually give a memory error. I didn't found out yet why it keeps all the images in the memory...
+
+# USER MANUAL
+## Installation
+
+ 1. Install [.Net Runtime](https://dotnet.microsoft.com/download/thank-you/dotnet-runtime-2.2.7-windows-x64-installer)
+ 2. Install [.Net Core Runtime](https://dotnet.microsoft.com/download/thank-you/dotnet-runtime-2.2.7-windows-x64-asp.net-core-runtime-installer)
+ 3. Download the MuseumBackend 
+ 4. Extract the zip to a folder by choice
+ 5. Download the Assets (images of birds + info birds and AI)
+ 6. extraxt the assets zip to the folder of MuseumBackend (step 4)
+ 7. Done
+
+## Starting
+To start the app simply run MuseumBack.exe.
+You can test it out by going to the [swagger endpoint](http://localhost:5000/swagger)
+
+Steps after you probably want to do:
+
+ - Port Forward the server
+ - Reverse proxy
 
